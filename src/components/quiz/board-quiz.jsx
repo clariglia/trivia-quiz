@@ -1,5 +1,3 @@
-
-
 import ContainerQuiz from "./container-quiz";
 import ProgressQuiz from "./progress-quiz";
 import QuestionsQuiz from "./questions-quiz";

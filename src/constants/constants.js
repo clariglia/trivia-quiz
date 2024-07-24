@@ -60,3 +60,32 @@ export const capitalQuiz = [
         answer: "Brasília"
     }
 ]
+
+
+export const capitalQuizMedium = [{
+    id: 1,
+    question: "What is the capital of Canada?",
+    options: ["Toronto", "Montreal", "Vancouver", "Ottawa"],
+    answer: "Ottawa"
+},{
+    id: 2,
+    question: "What is the capital of Mexico?",
+    options: ["Guadalajara", "Monterrey", "Puebla", "Mexico City"],
+    answer: "Mexico City"
+},{
+    id: 3,
+    question: "What is the capital of Russia?",
+    options: ["Saint Petersburg", "Moscow", "Novosibirsk", "Yekaterinburg"],
+    answer: "Moscow"
+},{
+    id: 4,
+    question: "What is the capital of China?",
+    options: ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"],
+    answer: "Beijing"
+}, {
+    id: 5,
+    question: "What is the capital of South Africa?",
+    options: ["Johannesburg", "Cape Town", "Durban", "Pretoria"],
+    answer: "Pretoria"
+}
+]

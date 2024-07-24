@@ -6,6 +6,10 @@
   align-items:center;
 }
 
+*{
+  background-color:rgb(174, 181, 247);
+}
+
 .container-home button{
   background-color:rgb(174, 181, 247);
   border: 2px solid black;

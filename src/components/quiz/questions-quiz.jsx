@@ -15,9 +15,9 @@ const navigate = useNavigate();
     } = useContext(QuizContext);
 
 
-        if (currQuestInd >= capitalQuiz.length) {
-            navigate('/results');
-        }
+    if (currQuestInd >= capitalQuiz.length) {
+        navigate('/results');
+    }
 
     return(
         <section>     

@@ -11,7 +11,7 @@ export const QuizProvider = ({children}) => {
     const [saveAnswer, setSaveAnswer] = useState(0);
 
 
-    const handleOptionClick = useCallback((option)=>{
+    const handleOptionClick = useCallback((option) => {
         setSelectOption(option);
         if (option === capitalQuiz[currQuestInd].answer) {
             setFeedback("correct");
@@ -21,11 +21,11 @@ export const QuizProvider = ({children}) => {
         }
     }, [currQuestInd, saveAnswer])
 
-    const handleNextQuestion = useCallback(()=>{
+    const handleNextQuestion = useCallback(() => {
         setCurrQuestInd(currQuestInd + 1);
         setSelectOption("");
         setFeedback("");
-        setProgress((prevProgress) => prevProgress + 10);
+        setProgress((prevProgress) => prevProgress + capitalQuiz.length);
     }, [currQuestInd])
 
     const resetQuiz = useCallback(() => {
@@ -37,6 +37,7 @@ export const QuizProvider = ({children}) => {
     }, []);
 
     const currentQuestion = useMemo(() => capitalQuiz[currQuestInd], [currQuestInd]);
+
     return(
         <QuizContext.Provider value={{capitalQuiz,
             currQuestInd,
