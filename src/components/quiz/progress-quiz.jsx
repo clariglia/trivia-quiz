@@ -9,7 +9,9 @@ const ProgressQuiz = () => {
         <>
             {currQuestInd >= capitalQuiz.length ? null : 
             <article className="col-12 flex-column"> 
-                <ProgressBar animated variant="primary" now={progress} />
+                <section className={window.location.href.includes('easy') ? "easy-progress" : "medium-progress"}>
+                    <ProgressBar animated now={progress} />
+                </section>
                 <div>
                     <p>{`${currQuestInd + 1} / ${capitalQuiz.length}`}</p>
                 </div>

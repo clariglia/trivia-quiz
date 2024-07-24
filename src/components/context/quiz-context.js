@@ -1,5 +1,5 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import { capitalQuiz } from "../../constants/constants";
+import { capitalQuizEasy, capitalQuizMedium } from "../../constants/constants";
 
 export const QuizContext = createContext();
 
@@ -9,6 +9,8 @@ export const QuizProvider = ({children}) => {
     const [feedback, setFeedback] = useState("");
     const [progress, setProgress] = useState(0);
     const [saveAnswer, setSaveAnswer] = useState(0);
+    const [isAnswered, setIsAnswered] = useState(false);
+    const capitalQuiz = window.location.pathname.includes('easy') ? capitalQuizEasy : capitalQuizMedium;
 
 
     const handleOptionClick = useCallback((option) => {
@@ -16,17 +18,21 @@ export const QuizProvider = ({children}) => {
         if (option === capitalQuiz[currQuestInd].answer) {
             setFeedback("correct");
             setSaveAnswer(saveAnswer + 1);
-        } else {
-            setFeedback("incorrect");
+            setIsAnswered(true);
         }
-    }, [currQuestInd, saveAnswer])
+        else {
+            setFeedback("incorrect");
+            setIsAnswered(true);
+        }
+    }, [currQuestInd, saveAnswer, capitalQuiz])
 
     const handleNextQuestion = useCallback(() => {
         setCurrQuestInd(currQuestInd + 1);
         setSelectOption("");
         setFeedback("");
+        setIsAnswered(false);
         setProgress((prevProgress) => prevProgress + capitalQuiz.length);
-    }, [currQuestInd])
+    }, [currQuestInd, capitalQuiz])
 
     const resetQuiz = useCallback(() => {
         setCurrQuestInd(0);
@@ -34,12 +40,14 @@ export const QuizProvider = ({children}) => {
         setFeedback("");
         setProgress(0);
         setSaveAnswer(0);
+        setIsAnswered(false);
     }, []);
 
-    const currentQuestion = useMemo(() => capitalQuiz[currQuestInd], [currQuestInd]);
+    const currentQuestion = useMemo(() => capitalQuiz[currQuestInd], [currQuestInd, capitalQuiz]);
 
     return(
-        <QuizContext.Provider value={{capitalQuiz,
+        <QuizContext.Provider value={{
+            capitalQuiz,
             currQuestInd,
             selectOption,
             feedback,
@@ -47,6 +55,7 @@ export const QuizProvider = ({children}) => {
             progress,
             currentQuestion,
             saveAnswer,
+            isAnswered,
             handleNextQuestion, resetQuiz}}>
             {children}
         </QuizContext.Provider>

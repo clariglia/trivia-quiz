@@ -1,4 +1,4 @@
-export const capitalQuiz = [
+export const capitalQuizEasy = [
     {
         id: 1,
         question: "What is the capital of Australia?",
@@ -87,5 +87,35 @@ export const capitalQuizMedium = [{
     question: "What is the capital of South Africa?",
     options: ["Johannesburg", "Cape Town", "Durban", "Pretoria"],
     answer: "Pretoria"
+}, {
+    id: 6,
+    question: "What is the capital of Argentina?",
+    options: ["Buenos Aires", "Córdoba", "Rosario", "Mendoza"],
+    answer: "Buenos Aires"
+},
+{
+    id: 7,
+    question: "What is the capital of South Korea?",
+    options: ["Busan", "Seoul", "Incheon", "Daegu"],
+    answer: "Seoul"
+},
+{
+   id: 8,
+   question: "What is the capital of Iran?",
+   options: ["Isfahan", "Mashhad", "Tehran", "Tabriz"],
+   answer: "Tehran",
+},
+{
+    id: 9,
+    question: "What is the capital of Kenya?",
+    options: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"],
+    answer: "Nairobi"
+},
+{
+    id: 10,
+    question: "What is the capital of Slovakia?",
+    options: ["Nitra", "Košice", "Prešov", "Bratislava"],
+    answer: 'Bratislava'
 }
 ]
+
