@@ -13,8 +13,10 @@ function App() {
         <Route path="/" element={<Header />} />
         <Route path="/quiz-easy" element={<BoardQuiz />} />
         <Route path="/quiz-medium" element={<BoardQuiz />} />
+        <Route path="/quiz-hard" element={<BoardQuiz />} />
         <Route path="/easy-results" element={<Results />} />
         <Route path="/medium-results" element={<Results />} />
+        <Route path="/hard-results" element={<Results />} />
         <Route path="*" element={<h1>Page not found x_x</h1>} />
       </Routes>
     </BrowserRouter>

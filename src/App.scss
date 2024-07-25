@@ -4,15 +4,16 @@ body {
   background-color: #FFFFFF; 
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
 }
 
 :root{
     --easy-color: #013568;
     --medium-color: #016850;
+    --hard-color: #c75606;
     --background-color: #e9e5e5;
-    --background-color-hover: #9a9a9a;
+    --background-color-hover: #c5c3c3;
 }
 @mixin button-styles{
   border-radius: 5px;
@@ -44,7 +45,7 @@ h1, h2 {
 
 *{
   background-color: #e9e5e5; 
-  color: #013568;
+/*   color: #013568; */
 }
 
 .container-home .easy {
@@ -60,10 +61,20 @@ h1, h2 {
 .container-home .medium{
   @include button-styles;
   border: 2px solid var(--medium-color);
-  color: var(--easy-color); 
+  color: var(--medium-color); 
   background-color: var(--background-color);
 }
 .container-home .medium:hover {
+  background-color: var(--background-color-hover);
+}
+
+.container-home .hard{
+  @include button-styles;
+  border: 2px solid var(--hard-color);
+  color: var(--hard-color); 
+  background-color: var(--background-color);
+}
+.container-home .hard:hover {
   background-color: var(--background-color-hover);
 }
 
@@ -100,11 +111,26 @@ h1, h2 {
   background-color: var(--background-color-hover);
 }
 
+.container-quiz .button-quiz-hard {
+  @include button-styles;
+  border: 2px solid var(--hard-color);
+  color: var(--hard-color); 
+  font-weight: bold;
+  background-color: var(--background-color);
+}
+
+.container-quiz .button-quiz-hard:hover {
+  background-color: var(--background-color-hover);
+}
+
 .question-easy{
   color: var(--easy-color);
 }
 .question-medium{
   color: var(--medium-color);
+}
+.question-hard{
+  color: var(--hard-color);
 }
 
 .container-results-easy{
@@ -127,16 +153,35 @@ h1, h2 {
   color: var(--medium-color);
 }
 
+.container-results-hard{
+  @include results;
+  color: var(--hard-color);
+}
+.container-results-hard button{
+  @include button-styles;
+  border: 2px solid var(--hard-color);
+  color: var(--hard-color);
+}
+
 .button-next-easy{
   @include button-styles;
   border: 2px solid var(--easy-color);
-  color: (--easy-color);
+  color: var(--easy-color);
+  font-weight: bold;
 }
 
 .button-next-medium{
   @include button-styles;
   border: 2px solid var(--medium-color);
-  color: (--medium-color);
+  color: var(--medium-color);
+  font-weight: bold;
+}
+
+.button-next-hard{
+  @include button-styles;
+  border: 2px solid var(--hard-color);
+  color: var(--hard-color);
+  font-weight: bold;
 }
 
 .easy-progress .progress-bar {
@@ -145,4 +190,8 @@ h1, h2 {
 
 .medium-progress .progress-bar {
   background-color: var(--medium-color) !important;
+}
+
+.hard-progress .progress-bar {
+  background-color: var(--hard-color) !important;
 }

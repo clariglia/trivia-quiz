@@ -1,31 +1,34 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { QuizContext } from "../context/quiz-context";
 import { useNavigate } from "react-router-dom";
+import { difficulty } from "../utils/ultis";
 
 const QuestionsQuiz = () => {
 const navigate = useNavigate();
-    const {
-        capitalQuiz,
-        currQuestInd,
-        selectOption,
-        feedback,
-        handleOptionClick,
-        handleNextQuestion,
-        currentQuestion,
-        isAnswered,
-    } = useContext(QuizContext);
+const {
+    capitalQuiz,
+    currQuestInd,
+    selectOption,
+    feedback,
+    handleOptionClick,
+    handleNextQuestion,
+    currentQuestion,
+    isAnswered,
+} = useContext(QuizContext);
 
 
-    if (currQuestInd >= capitalQuiz.length) {
-        window.location.pathname.includes('quiz-easy') ? navigate('/easy-results') : navigate('/medium-results');
-    }
+    useEffect(()=>{
+        if (currQuestInd >= capitalQuiz.length) {
+            navigate(`/${difficulty()}-results`);
+        }
+    }, [currQuestInd, capitalQuiz.length, navigate])
 
     return(
         <section>     
-            <h2 className={window.location.pathname.includes('easy') ? "question-easy" : "question-medium"}>{window.location.pathname.includes('quiz') && currentQuestion.question}</h2>
-            {window.location.pathname.includes('quiz') && currentQuestion.options.map((option, index) => (
+            <h2 className={`question-${difficulty()}`}>{window.location.pathname.includes('quiz') && currentQuestion && currentQuestion.question}</h2>
+            {window.location.pathname.includes('quiz') && currentQuestion && currentQuestion.options.map((option, index) => (
                     <div key={index}>
-                        <button className={window.location.pathname.includes('easy') ? "button-quiz-easy" : "button-quiz-medium"}
+                        <button className={`button-quiz-${difficulty()}`}
                             disabled={isAnswered}
                             onClick={() => handleOptionClick(option)}
                             style={{
@@ -48,7 +51,7 @@ const navigate = useNavigate();
                         </button>
                     </div>
                 ))}
-            {feedback && <button className={window.location.href.includes('easy') ? "button-next-easy" : "button-next-medium"} onClick={handleNextQuestion}>Next question</button>}
+            {feedback && <button className={`button-next-${difficulty()}`} onClick={handleNextQuestion}>Next question</button>}
         </section>
     )
 }

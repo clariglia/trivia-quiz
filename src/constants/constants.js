@@ -119,3 +119,59 @@ export const capitalQuizMedium = [{
 }
 ]
 
+export const capitalQuizHard = [{
+    id: 1,
+    question: "What is the capital of Babilonia?",
+    options: ["Toronto", "Montreal", "Vancouver", "Ottawa"],
+    answer: "Ottawa"
+},{
+    id: 2,
+    question: "What is the capital of Mexico?",
+    options: ["Guadalajara", "Monterrey", "Puebla", "Mexico City"],
+    answer: "Mexico City"
+},{
+    id: 3,
+    question: "What is the capital of Russia?",
+    options: ["Saint Petersburg", "Moscow", "Novosibirsk", "Yekaterinburg"],
+    answer: "Moscow"
+},{
+    id: 4,
+    question: "What is the capital of China?",
+    options: ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"],
+    answer: "Beijing"
+}, {
+    id: 5,
+    question: "What is the capital of South Africa?",
+    options: ["Johannesburg", "Cape Town", "Durban", "Pretoria"],
+    answer: "Pretoria"
+}, {
+    id: 6,
+    question: "What is the capital of Argentina?",
+    options: ["Buenos Aires", "Córdoba", "Rosario", "Mendoza"],
+    answer: "Buenos Aires"
+},
+{
+    id: 7,
+    question: "What is the capital of South Korea?",
+    options: ["Busan", "Seoul", "Incheon", "Daegu"],
+    answer: "Seoul"
+},
+{
+   id: 8,
+   question: "What is the capital of Iran?",
+   options: ["Isfahan", "Mashhad", "Tehran", "Tabriz"],
+   answer: "Tehran",
+},
+{
+    id: 9,
+    question: "What is the capital of Kenya?",
+    options: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"],
+    answer: "Nairobi"
+},
+{
+    id: 10,
+    question: "What is the capital of Slovakia?",
+    options: ["Nitra", "Košice", "Prešov", "Bratislava"],
+    answer: 'Bratislava'
+}
+]

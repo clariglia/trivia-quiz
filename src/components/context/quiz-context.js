@@ -1,5 +1,6 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import { capitalQuizEasy, capitalQuizMedium } from "../../constants/constants";
+/* import { capitalQuizEasy, capitalQuizMedium } from "../../constants/constants"; */
+import { capitalQuizContext } from "../utils/ultis";
 
 export const QuizContext = createContext();
 
@@ -10,7 +11,7 @@ export const QuizProvider = ({children}) => {
     const [progress, setProgress] = useState(0);
     const [saveAnswer, setSaveAnswer] = useState(0);
     const [isAnswered, setIsAnswered] = useState(false);
-    const capitalQuiz = window.location.pathname.includes('easy') ? capitalQuizEasy : capitalQuizMedium;
+    const capitalQuiz = capitalQuizContext();
 
 
     const handleOptionClick = useCallback((option) => {
